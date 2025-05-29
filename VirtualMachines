@@ -4,3 +4,39 @@
 }
 
 FLARE VM = https://drive.google.com/file/d/1JLTlcHlCDih5v9qSY3ElFeuNWa6L9RVV/view?usp=sharing
+    <#
+    ### Preparazione
+    vai in impostazioni aggiornamento e sicurezza
+    1 disabilita Windows update (se disponibile)
+    2 disabilita tutte le opzioni di windows defender
+    3 disabilita tutte le opzioni di controllo app ed exploit protection
+    
+    ### OPZIONALE ###
+    apri powershell amministratore e dai:
+    notepad "$env:windir\System32\drivers\etc\hosts"
+    inserisci queste righe alla fine del file:
+    127.0.0.1 sls.microsoft.com
+    127.0.0.1 kms.microsoft.com
+    127.0.0.1 activation.sls.microsoft.com
+    127.0.0.1 licensing.mp.microsoft.com
+    ### FINE OPZIONALE ###
+    attiva la rete: 
+    #>
+    
+    (New-Object net.webclient).DownloadFile('https://github.com/ionuttbara/windows-defender-remover/releases/download/release_def_12_8_2/DefenderRemover.exe',"$([Environment]::GetFolderPath("Desktop"))/DefenderRemover.exe")
+    
+    <# 
+    Nota bene:
+    - Fai lo snapshot quando richiesto
+    - Se dovesse chiedere la password utente forniscila
+    - Se sembra bloccato premi invio piÃ¹ volte
+    - Poi dai questo: 
+    #>
+    
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;(New-Object net.webclient).DownloadFile('https://raw.githubusercontent.com/mandiant/flare-vm/main/install.ps1',"$([Environment]::GetFolderPath("Desktop"))\install.ps1"); [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; cd $([Environment]::GetFolderPath("Desktop")); Unblock-File .\install.ps1;Set-ExecutionPolicy Unrestricted -Force; .\install.ps1
+    
+    <#
+    al termine apri di nuovo powershell amministratore, e inserisci:
+    #>
+    
+    (New-Object net.webclient).DownloadFile('https://raw.githubusercontent.com/Akir4d/utility/refs/heads/main/malwareRepo.ps1',"$([Environment]::GetFolderPath("Desktop"))\malwareRepo.ps1")
