@@ -1,23 +1,28 @@
 # THE NAME SPEAKS ITSELF
-https://haveibeenpwned.com {
-
-  - check data breaks
-  - check email
-  - check password
-  - check who have been pwned and others informations
-}
+  https://haveibeenpwned.com {
+  
+    - check data breaks
+    - check email
+    - check password
+    - check who have been pwned and others informations
+  }
 
 
 
 # OSINT RESOURCES AND TOOLS
-https://inteltechniques.com {
+  https://inteltechniques.com {
+  
+    - OSINT Training
+    - Digital and physical Disappearance
+    - Data Removal Guide or Extreme Privacy Book
+  
+    TOOLS:
+    - search engines (a lot)
+    - people search engines (a lot)
+    - A LOT OF TOOLS
+  }
+  https://nvd.nist.gov/vuln/search # VULNERABILITY DATABASES
+  https://app.any.run/submissions
 
-  - OSINT Training
-  - Digital and physical Disappearance
-  - Data Removal Guide or Extreme Privacy Book
-
-  TOOLS:
-  - search engines (a lot)
-  - people search engines (a lot)
-  - A LOT OF TOOLS
-}
+# COURSES
+  https://www.isc2.org/certifications/cc
